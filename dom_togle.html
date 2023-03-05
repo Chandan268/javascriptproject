@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        .menu{
+            width: 30vw;
+        }
+        h4{
+            width: 100%;
+            background-color: green;
+            padding: 5px 10px;
+            text-align: right;
+        }
+        .icon{
+            color: white;
+            font-size: 35px;
+            cursor: pointer;
+        }
+        ul{
+            list-style-type: none;
+            margin-left: -40px;
+            margin-top: -20px;
+            width: 31.9vw;
+        }
+        li{
+            background-color: green;
+            padding: 10px;
+            margin-bottom: 2px;
+        }
+        li:hover{
+            background-color: rgb(6, 90, 6)
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <h4>
+            <span class="material-symbols-outlined icon" onclick="fun()">menu</span>
+        </h4>
+        <div class="menu-items hide">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Cart</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </div>   
+    <script>
+        var ch  = 1
+        var div = document.querySelector(".menu-items")
+        var icon = document.querySelector(".icon")
+        function fun(){
+            div.classList.toggle("hide")
+            if(ch==1){
+                icon.innerHTML="close"
+                ch=2
+            }
+            else{
+                icon.innerHTML="menu"
+                ch=1
+            }
+        }
+    </script>
+</body>
+</html>

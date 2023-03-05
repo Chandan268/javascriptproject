@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .main{
+            width: 100vw;
+            height: 100vh;
+        }
+        .center{
+            width: 60vw;
+            height: 60vh;
+            margin:auto;
+        }
+        h3{
+            background-color: green;
+            text-align: center;
+            padding: 10px;
+            color: white;
+            margin-bottom: 5px;
+        }
+        input{
+            width: 99%;  
+            padding: 10px 0;
+            margin-bottom: 5px;
+            border: none;
+            border-bottom: 5px solid lightgray;
+        }
+        button{
+            background-color: green;
+            width: 100%;
+            padding: 10px 0;
+            border: none;
+            border-radius: 5px;
+            color: white;
+        }
+    </style>x
+</head>
+<body>
+    <div class="main">
+        <div class="center">
+            <h3>DOM Form Validation </h3>
+            <form name="myform" onsubmit="postData();return false">
+                <input type="text" name="name" id="name" placeholder="Enter Your Name" onfocus="validate('name')" onblur="validate('name')">
+                <input type="email" name="email" id="email" placeholder="Enter Your Email Id" onfocus="validate('email')" onblur="validate('email')">
+                <input type="text" name="salary" id="salary" placeholder="Enter Your Salary" onfocus="validate('salary')" onblur="validate('salary')">
+                <input type="text" name="dsg" id="dsg" placeholder="Enter Your Designation" onfocus="validate('dsg')" onblur="validate('dsg')">
+                <input type="text" name="city" id="city" placeholder="Enter Your City Name" onfocus="validate('city')" onblur="validate('city')">
+                <input type="text" name="state" id="state" placeholder="Enter Your State Name" onfocus="validate('state')" onblur="validate('state')">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>  
+    <script>
+        var count = 6
+        function validate(input){
+            var input = document.getElementById(input)
+            if(input.value==""){
+                input.style.border="2px solid red"
+                input.placeholder="This Feild is Requried"
+            }
+            else{
+                input.style.border="none"
+                count--
+            }
+        }
+        function postData(){
+            if(count>0)
+            alert("Plese Fill Out All Required Fields")
+            else{
+                alert(
+            `
+                Name            :   ${document.forms['myform']['name'].value}
+                Email           :   ${document.forms['myform']['email'].value}
+                Salary           :   ${document.forms['myform']['salary'].value}
+                Designation     :   ${document.forms['myform']['dsg'].value}
+                City            :   ${document.forms['myform']['city'].value}
+                State           :   ${document.forms['myform']['state'].value}
+            `
+            );
+            }
+        }
+    </script>  
+</body>
+</html>

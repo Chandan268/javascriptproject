@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .main{
+            width: 100vw;
+            height: 100vh;
+        }
+        .center{
+            width: 70vw;
+            margin: auto;
+        }
+        button{
+            background-color: green;
+            color: white;
+            width: 100%;
+            padding: 10px;
+            border: none;
+        }
+        p{
+            background-color: navy;
+            color: white;
+            text-align: justify;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="center">
+            <button onclick="fun()">Change/Reset</button>
+            <p id="para">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident </p>
+        </div>
+    </div>
+    <script>
+        var text1 = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. "
+        var text2 = "similique possimus quibusdam facere voluptates nesciunt explicabo"
+        var ch = 2
+        var p = document.getElementById("para")
+        function fun(){
+            if(ch==1){
+                p.innerHTML=text1
+                p.style.backgroundColor="navy"
+                ch=2
+            }
+            else{
+                p.innerHTML=text2
+                p.style.backgroundColor="purple"
+                ch=1
+            }
+        }
+    </script>
+</body>
+</html>

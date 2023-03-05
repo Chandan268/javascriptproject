@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .main{
+            width: 100vw;
+            height: 100vh;
+            padding: 10px;
+            background-color: aqua;
+        }
+        .parent{
+            width: 80%;
+            height: 80%;
+            padding: 10px;
+            background-color: green;
+            color: white;
+        }
+        .child1{
+            width: 80%;
+            height: 80%;
+            padding: 10px;
+            background-color: navy;
+            color: white;
+        }
+        .child2{
+            width: 80%;
+            height: 80%;
+            padding: 10px;
+            background-color: blueviolet;
+            color: white;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="main">
+        Main Division
+        <div class="parent">
+            Parent Division
+            <div class="child1">
+                Child1 Division
+                <div class="child2">
+                    Child2 Division
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var main = document.querySelector(".main")
+        var parent = document.querySelector(".parent")
+        var child1 = document.querySelector(".child1")
+        var child2 = document.querySelector(".child2")
+        main.addEventListener('click',()=>alert("Main Event is Called"),true)
+        parent.addEventListener('click',()=>alert("Parent Event is Called"),true)
+        child1.addEventListener('click',()=>alert("Child1 Event is Called"),true)
+        child2.addEventListener('click',()=>alert("Child2 Event is Called"),true)
+    </script>
+</body>
+</html>

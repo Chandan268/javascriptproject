@@ -1,0 +1,418 @@
+<!-- <!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="canvas" width="400" height="400"
+style="background-color:#333 ">
+</canvas>
+
+<script>
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+var radius = canvas.height / 2;
+ctx.translate(radius, radius);
+radius = radius * 0.90
+setInterval(drawClock, 1000);
+
+function drawClock() {
+  drawFace(ctx, radius);
+  drawNumbers(ctx, radius);
+  drawTime(ctx, radius);
+}
+
+function drawFace(ctx, radius) {
+  var grad;
+  ctx.beginPath();
+  ctx.arc(0, 0, radius, 0, 2*Math.PI);
+  ctx.fillStyle = 'white';
+  ctx.fill();
+  grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
+  grad.addColorStop(0, '#333');
+  grad.addColorStop(0.5, 'white');
+  grad.addColorStop(1, '#333');
+  ctx.strokeStyle = grad;
+  ctx.lineWidth = radius*0.1;
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+  ctx.fillStyle = '#333';
+  ctx.fill();
+}
+
+function drawNumbers(ctx, radius) {
+  var ang;
+  var num;
+  ctx.font = radius*0.15 + "px arial";
+  ctx.textBaseline="middle";
+  ctx.textAlign="center";
+  for(num = 1; num < 13; num++){
+    ang = num * Math.PI / 6;
+    ctx.rotate(ang);
+    ctx.translate(0, -radius*0.85);
+    ctx.rotate(-ang);
+    ctx.fillText(num.toString(), 0, 0);
+    ctx.rotate(ang);
+    ctx.translate(0, radius*0.85);
+    ctx.rotate(-ang);
+  }
+}
+
+function drawTime(ctx, radius){
+    var now = new Date();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    //hour
+    hour=hour%12;
+    hour=(hour*Math.PI/6)+
+    (minute*Math.PI/(6*60))+
+    (second*Math.PI/(360*60));
+    drawHand(ctx, hour, radius*0.5, radius*0.07);
+    //minute
+    minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
+    drawHand(ctx, minute, radius*0.8, radius*0.07);
+    // second
+    second=(second*Math.PI/30);
+    drawHand(ctx, second, radius*0.9, radius*0.02);
+}
+
+function drawHand(ctx, pos, length, width) {
+    ctx.beginPath();
+    ctx.lineWidth = width;
+    ctx.lineCap = "round";
+    ctx.moveTo(0,0);
+    ctx.rotate(pos);
+    ctx.lineTo(0, -length);
+    ctx.stroke();
+    ctx.rotate(-pos);
+}
+</script>
+
+</body>
+</html> -->
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<body>
+
+<h1>My First Google Map</h1>
+
+<div id="googleMap" style="width:100%;height:400px;"></div>
+
+<script>
+function myMap() {
+var mapProp= {
+  center:new google.maps.LatLng(51.508742,-0.120850),
+  zoom:5,
+};
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
+
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>image slide</title>
+    <style>
+        *{margin: 0;}
+        .main{
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+        .center{
+            width: 50%;
+            height: 50%;
+            position: relative;
+        }
+        .center img{
+            width: 100%;
+            height: 100%;
+        }
+        #btn1,#btn2{
+            background: none;
+            border: none;
+            color: green;
+        }
+        #btn1{
+            position: absolute;
+            top: 50%;
+            left: 10px;
+        }
+        #btn2{
+            position: absolute;
+            top: 50%;
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>this page is made for entertainment</h1>
+    <div class="main">
+        <div class="center">
+            <img src="image/banner1.jpg" id="img" alt="">
+            <button id="btn1" onclick="previous()"><span class="material-symbols-outlined">arrow_back_ios</span></button>
+            <button id="btn2" onclick="next()"><span class="material-symbols-outlined">arrow_forward_ios</span></button>
+        </div>
+    </div>
+    <script>
+        var images = ['image/banner1.jpg','image/banner2.jpg','image/banner3.jpg','image/banner4.jpg','image/banner5.jpg']
+        var img = document.getElementById("img")
+        var index = 0
+        // function previous(){
+        //     if(index>0){
+        //         index--
+        //         img.src=images[index]
+        //     }
+        // }
+        // function next(){
+        //     if(index<images.length-1){
+        //         index++
+        //         img.src=images[index]
+        //     }
+        // }
+          
+//         function previous(){
+//             if(index==0)
+//             index=images.length-1
+//             else
+//             index--
+
+//             img.src=images[index]
+//         }
+//         function next(){
+//             if(index==images.length-1)
+//             index=0
+//             else
+//             index++
+
+//             img.src=images[index]
+//         }
+//         setInterval(()=>{
+//             next()
+//         },2000)
+    </script>
+<!</body>
+ </html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .main{
+            width: 100vw;
+            height: 100vh;
+        }
+        .center{
+            width: 70vw;
+            margin: auto;
+        }
+        button{
+            background-color: green;
+            color: white;
+            width: 100%;
+            padding: 10px;
+            border: none;
+        }
+        img{
+            background-color: navy;
+            color: white;
+            text-align: justify;
+            padding: 50px;
+            margin: 50px;
+            height: 900px;
+            weight: 900px; ;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="center">
+            <button onclick="fun()">Change/Reset</button>
+            <img src="image/bann1.jpg" id="img" alt="">
+            <p id="para">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident, sapiente velit ab corrupti labore inventore quo dolor iure ea consequuntur ipsum nesciunt in possimus sint veniam libero nemo magnam animi nihil eveniet esse commodi vitae quaerat. Rerum quos nisi beatae totam corrupti iure obcaecati dolorem! Accusantium cum repudiandae odit quae aut odio in repellat nihil molestiae, porro quaerat rem nobis natus veniam nulla consequuntur, cumque, atque quod beatae error impedit! Aliquid dolor quia libero tempore rem natus impedit eligendi culpa, magni soluta asperiores, minus beatae. Adipisci vitae quia quae nam, porro totam tempore reprehenderit delectus </p> -->
+<!-- </div>
+    </div>
+    <script>
+        // var text1 = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident, sapiente velit ab corrupti labore inventore quo dolor iure ea consequuntur ipsum nesciunt in possimus sint veniam libero nemo magnam animi nihil eveniet esse commodi vitae quaerat. Rerum quos nisi beatae totam corrupti iure obcaecati dolorem! Accusantium cum repudiandae odit quae aut odio in repellat nihil molestiae, porro quaerat rem nobis natus veniam nulla consequuntur, cumque, atque quod beatae error impedit! Aliquid dolor quia libero tempore rem natus impedit eligendi culpa, magni soluta asperiores, minus beatae. Adipisci vitae quia quae nam, porro totam tempore reprehenderit delectus "
+        // var text2 = "similique possimus quibusdam facere voluptates nesciunt explicabo quidem deserunt voluptatibus, ipsam placeat! Temporibus optio distinctio praesentium possimus, modi, magni ad aliquam ratione quo sapiente natus tempora excepturi veniam porro dignissimos, dolores quia obcaecati vitae quaerat rerum eligendi ipsa! Nam, perspiciatis molestiae nobis nisi obcaecati quibusdam quis itaque quia fugiat, soluta distinctio a quidem veritatis, sequi sapiente consequuntur dicta eius reiciendis sint minus atque rerum. Reiciendis nulla dolorem, id voluptatum, magni accusamus asperiores velit suscipit perspiciatis tempore saepe labore quia commodi doloribus quam quo culpa at, itaque nostrum. Fugit aperiam veritatis placeat cumque nesciunt voluptas molestias nihil. Amet vero porro tenetur, similique aut mollitia fuga nobis?"
+         var ch = 2
+         var image=['image/bann1.jpg','image/bann2.jpg','image/bann3.jpg',]
+         var imgs=['image/bann4.jpg','image/bann5.webp']
+        var img = document.getElementById("img")
+        function fun(){
+            if(ch==1){
+                img.innerHTML=image
+                img.style.backgroundColor="navy"
+                ch=2
+            }
+            else{
+                img.innerHTML=imgs
+                img.style.backgroundColor="purple"
+                ch=1
+            }
+        }
+    </script>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            width: 50vw;
+            height: 50vh;
+            background-color: aqua;
+            color: black;
+            display: grid;
+            place-items: center;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main"
+        onmouseover="fun1()"
+        onmouseenter="fun2()"
+        onmousedown="fun3()"
+        onmouseup="fun4()"
+        onclick="fun5()"
+        ondblclick="fun6()"
+        onmousemove="fun7()"
+        onmousewheel="fun8()"
+        onmouseout="fun9()"
+        onmouseleave="fun10()"
+    >
+        No Event
+    </div>
+    <script>
+        var main = document.querySelector(".main")
+        function fun1(){
+            main.style.backgroundColor="dimgray"
+            main.style.color="white"
+            main.innerHTML = "On Mouse Over Event"
+            console.log("On Mouse Over Event")
+        }
+        function fun2(){
+            main.style.backgroundColor="green"
+            main.style.color="white"
+            main.innerHTML = "On Mouse Enter Event"
+            console.log("On Mouse Enter Event")
+        }
+        function fun3(){
+            main.style.backgroundColor="gray"
+            main.style.color="white"
+            main.innerHTML = "On Mouse Down Event"
+            console.log("On Mouse Down Event")
+        }
+        function fun4(){
+            main.style.backgroundColor="navy"
+            main.style.color="white"
+            main.innerHTML = "On Mouse UP Event"
+            console.log("On Mouse UP Event")
+        }
+        function fun5(){
+            main.style.backgroundColor="indigo"
+            main.style.color="white"
+            main.innerHTML = "On Click Event"
+            console.log("On Click Event")
+        }
+        function fun6(){
+            main.style.backgroundColor="red"
+            main.style.color="white"
+            main.innerHTML = "On Double Click Event"
+            console.log("On Double Click Event")
+        }
+        function fun7(){
+            main.style.backgroundColor="pink"
+            main.style.color="black"
+            main.innerHTML = "On Mouse move Event"
+            console.log("On Mouse move Event")
+        }
+        function fun8(){
+            main.style.backgroundColor="black"
+            main.style.color="white"
+            main.innerHTML = "On Mouse Wheel Event"
+            console.log("On Mouse Wheel Event")
+        }
+        function fun9(){
+            main.style.backgroundColor="yellow"
+            main.style.color="black"
+            main.innerHTML = "On Mouse Out Event"
+            console.log("On Mouse Out Event")
+        }
+        function fun10(){
+            main.style.backgroundColor="orangered"
+            main.style.color="white"
+            main.innerHTML = "On Mouse Leave Event"
+            console.log("On Mouse Leave Event")
+        }
+    </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Digital Clock</h1>
+    <div id="id">
+        <div class="class">
+            <div>
+                <span id="hours">00</span>
+                <span class="text">hours</span>
+            </div>
+            <div>
+                <span id="minute">00</span>
+                <span class="text">minute</span>
+            </div>
+            <div>
+                <span id="second">00</span>
+                <span class="text">second</span>
+            </div>
+            <div>
+                <span id="ampm">Am</span>
+               
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

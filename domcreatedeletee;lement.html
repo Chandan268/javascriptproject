@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <style>
+        *{
+            margin: 0;
+        }
+        .main{
+            width: 100vw;
+            height: 100vh;
+        }
+        .center{
+            width: 70%;
+            margin: auto;
+        }
+        .first{
+            display: flex;
+            justify-content: space-between;
+        }
+        button{
+            width: 49%;
+            background-color: navy;
+            color: white;
+            padding: 10px;
+            border: none;
+        }
+        .para{
+            background-color: green;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 5px;
+        }
+    </style> -->
+</head>
+<body>
+    <div class="main">
+        <div class="center">
+            <div class="first">
+                <button onclick="createPara()">Create a New Paragraph</button>
+                <button onclick="deletePara()">Delete First Paragraph</button>
+            </div>
+            <div class="second">
+
+            </div>
+        </div>
+    </div>
+    <script>
+        var second = document.querySelector(".second")
+        var count = 1
+        function createPara(){
+            var p = document.createElement("p")
+            p.innerHTML = `This is Paragraph p${count}`
+            p.id="p"+count
+            p.classList.add("para")
+            second.appendChild(p)
+            count++
+        }
+        function deletePara(){
+            // console.log(second.childNodes);
+            if(second.childNodes.length>1)
+            second.removeChild(second.childNodes[1])
+            // second.removeChild(second.childNodes[second.childNodes.length-1])
+        }
+    </script>
+</body>
+</html>

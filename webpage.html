@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>website</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+    width: 100%;
+    background: linear-gradient(to top, rgba(46, 5, 50, 0.5)50%,rgba(0,0,0,0.5)50%),url(bac.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 109vh;
+}
+
+.navbar{
+    width: 1200px;
+    height:75px;
+    margin: auto;
+
+}
+
+.icon{
+    width: 200px;
+    float: left;
+    height: 70px;
+}
+
+.logo{
+     color: #ff7200;
+     font-size: 35px;
+     font-family: Arial;
+     padding-left: 20px;
+     float: left;
+     padding-top: 10px;
+}
+.menu{
+    width: 400px;
+    float: right;
+    height: 70px;
+    
+
+}
+
+ul{
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul li{
+    list-style: none;
+    /* margin: 20px; */
+    margin-left: 20px;
+    margin-top: 20px;
+    
+}
+
+ul li a{
+    color: rgb(255, 0, 144);
+}
+img{
+         height: 79px;
+        width: 49px;
+     
+        border-radius: 58px;
+        border: 2px solid black;
+}
+.contact {
+    width: 50%;
+    margin: auto;
+    padding: 15px;
+    border: 3px solid lightblue;
+    border-radius: 10px;
+    position: fixed;
+    top: 20%;
+    left: 25%;
+    background-color: rgb(121, 131, 127);
+}
+.contact input {
+            width: 95%;
+            padding: 10px;
+            border: none;
+            border-bottom: 5px solid lightgray;
+            margin-bottom: 10px;
+        }
+        .contact h3 {
+            text-align: left;
+        }
+        .icon {
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="outer">  
+        <div class="header"> 
+         <div class="main">
+        <div class="navbar">
+            <div class="icon">
+
+
+
+                <h2 class="logo">PraRoz <img src="log.webp" height="49px" width="49px"/></h2>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                     <li><a href="#">Service</a></li>
+                    <li><a href="#">Design</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <select style="margin-top:20px; margin-left: 10px; background-color: rgb(255, 0, 132);">
+                    <option>English</option>
+                    <option>Hindi</option>
+                    <option>Urdu</option>
+                    <option>Franch</option>
+                    <option>Mrathi</option>
+                </select>
+                
+            </div>
+            </div>
+        </div>
+
+        <div class="main"></div>
+            <div class="footer">
+                
+            </div>
+        </div>
+    </div>
+</div>
+<div class="contact">
+    <h3><span class="material-symbols-outlined icon" onclick="fun()">close</span></h3>
+<form>
+    <input type="text" Name="name"  id="name" placeholder="Enter the name">
+    <input type="email" Name="email"  id="email" placeholder="Enter the email id">
+    <input type="text" Name="phone"  id="name" placeholder="Enter the Phone no">
+    <input type="text" Name="city"  id="name" placeholder="Enter the city name">
+    <input type="text" Name="state"  id="name" placeholder="Enter the state name">
+    <button>submit</button>
+    </form>
+</div>
+<script>
+    function fun() {
+        var contact = document.querySelector(".contact")
+        contact.style.display = "none"
+        const time = setTimeout(() => {
+            contact.style.display = "block"
+        }, 5000)
+    }
+    
+</script>
+</body>
+</html>
